@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      padding-top: 20%;
+      transition: background-color 0.5s;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Teagan Metnick</h1>
+  <p>Course: Web Applications Programming</p>
+  <p>Major: Management Information Systems</p>
+  <h2>Hello! Welcome to my dynamic webpage!</h2>
+
+  <script>
+    function setBackgroundBasedOnTime() {
+      const hour = new Date().getHours();
+      let backgroundColor = '';
+      let textColor = '';
+
+      if (hour >= 6 && hour < 12) {
+        backgroundColor = '#FFFAE3'; // Morning - light yellow
+        textColor = '#000000';
+      } else if (hour >= 12 && hour < 18) {
+        backgroundColor = '#D0F0FD'; // Afternoon - light blue
+        textColor = '#000000';
+      } else if (hour >= 18 && hour < 21) {
+        backgroundColor = '#FFD580'; // Evening - orange
+        textColor = '#FFFFFF';
+      } else {
+        backgroundColor = '#1E1E2F'; // Night - dark blue
+        textColor = '#FFFFFF';
+      }
+
+      document.body.style.backgroundColor = backgroundColor;
+      document.body.style.color = textColor;
+    }
+
+    setBackgroundBasedOnTime();
+  </script>
+
+</body>
+</html>
